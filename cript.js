@@ -104,6 +104,11 @@ function carregarBoletim() {
         countAtencao++;
       }
     }
+  document.getElementById("precisa-atencao").innerText = countAtencao;
+}
+
+// Executa a função assim que a página é carregada
+document.addEventListener("DOMContentLoaded", carregarBoletim);
 
     // Criação da linha da tabela no DOM
     const tr = document.createElement("tr");
