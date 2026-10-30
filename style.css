@@ -1,0 +1,160 @@
+/* Variáveis para padronizar as cores e estilos do projeto */
+:root {
+  --bg-color: #0f0c1b;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --text-primary: #f0f0f5;
+  --text-secondary: #a0a0b8;
+  --purple-accent: #9d4edd;
+  --pink-accent: #ff4d6d;
+  --success-color: #2ec4b6;
+  --warning-color: #ff9f1c;
+}
+
+/* Reset básico e estilo geral do corpo da página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  color: var(--purple-accent);
+  margin-bottom: 5px;
+}
+
+.header .subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Grade de cards de resumo com efeito Glassmorphism */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.card-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--pink-accent);
+}
+
+.card.highlight {
+  border-color: var(--purple-accent);
+}
+
+.subtext {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 5px;
+}
+
+/* Tabela de disciplinas e notas */
+.table-container {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow-x: auto; /* Permite rolar horizontalmente em telas pequenas */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+th {
+  background-color: rgba(157, 78, 221, 0.15);
+  color: var(--purple-accent);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+td {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Destaques para a situação do aluno */
+.status-good {
+  color: var(--success-color);
+  font-weight: 600;
+}
+
+.status-attention {
+  color: var(--pink-accent);
+  font-weight: 600;
+}
+
+.status-pending {
+  color: var(--text-secondary);
+}
+
+/* Ajustes para telas de celular */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  th, td {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
+}
